@@ -4,7 +4,14 @@
   "description": "Unit-tests",
   "main": "index.js",
   "scripts": {
-    "test": "jest-coverage"
+    "start": "webpack-dev-server --mode development",
+    "build": "webpack --mode production",
+    "lint": "eslint .",
+    "test": "jest --coverage",
+    "preshow:coverage": "npm run coverage",
+    "show:coverage": "live-server coverage/lcov-report",
+    "preshow:dist": "npm run build",
+    "show:dist": "live-server dist"
   },
   "repository": {
     "type": "git",
@@ -34,7 +41,7 @@
     "mini-css-extract-plugin": "^0.9.0",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.11",
-    "webpack-dev-server": "^3.10.3"
+    "webpack-dev-server": "^4.11.1"
   },
   "dependencies": {
     "core-js": "^3.6.5"
