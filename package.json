@@ -1,0 +1,19 @@
+{
+  "name": "ajs-unit-tests",
+  "version": "1.0.0",
+  "description": "Unit-tests",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest-coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IPL1987/ajs-Unit-tests.git"
+  },
+  "author": "IPL1987",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IPL1987/ajs-Unit-tests/issues"
+  },
+  "homepage": "https://github.com/IPL1987/ajs-Unit-tests#readme"
+}
