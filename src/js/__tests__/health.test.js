@@ -1,34 +1,14 @@
 import health from '../health';
 
-test('should healthy', () => {
-  const received = health({ name: 'Маг', health: 90 });
-  expect(received).toBe('healthy');
-});
+const checkObj = [
+  [{ name: 'Маг', health: 90 }, 'healthy'],
+  [{ name: 'Лучник', health: 45 }, 'wounded'],
+  [{ name: 'Мечник', health: 12 }, 'critical'],
+];
 
-test('should wounded', () => {
-  const received = health({ name: 'Маг', health: 40 });
-  expect(received).toBe('wounded');
-});
+const handler = test.each(checkObj);
 
-test('should critical', () => {
-  const received = health({ name: 'Маг', health: 10 });
-  expect(received).toBe('critical');
-});
-
-test('Parameter is not a number!', () => {
-  expect(() => {
-    health({});
-  }).toThrow();
-});
-
-test('Parameter is not a number!', () => {
-  expect(() => {
-    health({ name: 'Маг', health: 'mistake' });
-  }).toThrow();
-});
-
-test('Parameter is not a number!', () => {
-  expect(() => {
-    health({ name: 'Маг', health: -10 });
-  }).toThrow();
+handler('health level for %Unit', (person, expected) => {
+  const result = health(person);
+  expect(result).toBe(expected);
 });

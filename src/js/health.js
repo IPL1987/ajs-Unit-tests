@@ -1,16 +1,8 @@
-export default function health(units) {
-  let result;
-  if (units.health > 50) {
-    result = 'healthy';
+export default function health(obj) {
+  if (obj.health > 50) {
+    return 'healthy';
+  } if (obj.health < 15) {
+    return 'critical';
   }
-  if (units.health <= 50 && units.health > 15) {
-    result = 'wounded';
-  }
-  if (units.health <= 15 && units.health > 0) {
-    result = 'critical';
-  }
-  if (Number.isNaN(units.health) || units.health === undefined || units.health < 0 || typeof (units.health) !== 'number') {
-    throw new Error('Parameter is not a number!');
-  }
-  return result;
+  return 'wounded';
 }
