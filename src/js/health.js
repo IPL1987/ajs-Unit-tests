@@ -1,4 +1,4 @@
-export default function showHealth(units) {
+export default function health(units) {
   let result;
   if (units.health > 50) {
     result = 'healthy';

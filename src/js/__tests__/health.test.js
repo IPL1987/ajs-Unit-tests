@@ -1,34 +1,34 @@
-import showHealth from '../health';
+import health from '../health';
 
 test('should healthy', () => {
-  const received = showHealth({ name: 'Маг', health: 90 });
+  const received = health({ name: 'Маг', health: 90 });
   expect(received).toBe('healthy');
 });
 
 test('should wounded', () => {
-  const received = showHealth({ name: 'Маг', health: 40 });
+  const received = health({ name: 'Маг', health: 40 });
   expect(received).toBe('wounded');
 });
 
 test('should critical', () => {
-  const received = showHealth({ name: 'Маг', health: 10 });
+  const received = health({ name: 'Маг', health: 10 });
   expect(received).toBe('critical');
 });
 
 test('Parameter is not a number!', () => {
   expect(() => {
-    showHealth({});
+    health({});
   }).toThrow();
 });
 
 test('Parameter is not a number!', () => {
   expect(() => {
-    showHealth({ name: 'Маг', health: 'mistake' });
+    health({ name: 'Маг', health: 'mistake' });
   }).toThrow();
 });
 
 test('Parameter is not a number!', () => {
   expect(() => {
-    showHealth({ name: 'Маг', health: -10 });
+    health({ name: 'Маг', health: -10 });
   }).toThrow();
 });

@@ -1,14 +1,4 @@
-function getSpecialList(obj) {
-  const output = [];
-  for (const elem of obj.special) {
-    const {
-      id, name, icon, description = 'Описание недоступно',
-    } = elem;
-    output.push({
-      id, name, icon, description,
-    });
-  }
-  return output;
+export default function healthSort(arr) {
+  const sortArr = arr.sort((a, b) => (a.health > b.health ? -1 : 1));
+  return sortArr;
 }
-
-export default getSpecialList;
