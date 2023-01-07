@@ -1,12 +1,12 @@
 import health from '../health';
 
-const checkObj = [
-  [{ name: 'Маг', health: 90 }, 'healthy'],
-  [{ name: 'Лучник', health: 45 }, 'wounded'],
-  [{ name: 'Мечник', health: 12 }, 'critical'],
+const healthObj = [
+  [{ name: 'Маг', health: 60 }, 'healthy'],
+  [{ name: 'Лучник', health: 35 }, 'wounded'],
+  [{ name: 'Мечник', health: 15 }, 'critical'],
 ];
 
-const handler = test.each(checkObj);
+const handler = test.each(healthObj);
 
 handler('health level for %Unit', (person, expected) => {
   const result = health(person);
