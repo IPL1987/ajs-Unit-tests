@@ -3,7 +3,7 @@ import health from '../health';
 const healthObj = [
   [{ name: 'Маг', health: 60 }, 'healthy'],
   [{ name: 'Лучник', health: 35 }, 'wounded'],
-  [{ name: 'Мечник', health: 15 }, 'critical'],
+  [{ name: 'Мечник', health: 10 }, 'critical'],
 ];
 
 const handler = test.each(healthObj);
